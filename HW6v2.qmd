@@ -1,0 +1,29 @@
+---
+title: "HW6"
+format: pdf
+editor: visual
+execute: 
+eval: true
+echo: false
+fig-width: 6.5
+fig-height: 8
+  
+---
+
+```{r}
+library(tidyverse)
+library(here)
+library(rio)
+library(knitr)
+library(gt)
+library(DT)
+library(reactable)
+library(gtsummary)
+```
+
+```{r}
+
+
+
+```
+
