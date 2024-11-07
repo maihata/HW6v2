@@ -1,15 +1,20 @@
 ---
 title: "HW6"
 format: pdf
-editor: visual
-execute: 
-eval: true
-echo: false
+author: "Maiko Hata and Michelle Cui"
+date: "2024-11-06"
+execute:
+  eval: true
+  echo: false
 fig-width: 6.5
 fig-height: 8
+bibliography: biblio.bib
+
 ---
 
 ```{r}
+#| echo: false
+#| include: false
 library(tidyverse)
 library(here)
 library(rio)
@@ -19,5 +24,45 @@ library(DT)
 library(reactable)
 library(gtsummary)
 library(kableExtra)
-library(kable)
 ```
+<<<<<<< Updated upstream
+=======
+
+```{r}
+
+
+
+```
+>>>>>>> Stashed changes
+
+# What is Intersectionality and why is it important?
+
+@crenshaw1987theories emphasized the importance of intersectionality as a research framework, stating that “Because the intersectional experience is greater than the sum of racism and sexism, any analysis that does not take intersectionality into account cannot sufficiently address the particular manner in which Black women are subordinated” (p. 140)." Studies show that this stands true as studies show that infants and toddlers of color are underrepresented in Early Intervention (EI) services [see @cycyk2022moving; @cho2005korean; @cycyk2020supporting].
+
+# 
+```{r}
+#| results: asis
+#| message: false
+star_df <- import(here("Data","star.csv"))
+
+star_df %>% 
+  characterize() %>% 
+  group_by(sex,frl) %>% 
+  summarize(math_mean = round(mean(tmathss, na.rm = T), digits = 2),
+            math_sd = round(sd(tmathss, na.rm = T), digits = 2),
+            rdg_mean = round(mean(treadss, na.rm = T), digits = 2),
+            rdg_sd = round(sd(treadss, na.rm = T), digits = 2)) %>% 
+  kable()
+
+```
+
+```{r}
+
+```
+
+
+
+\newpage
+
+# References
+
