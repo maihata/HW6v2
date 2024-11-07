@@ -23,7 +23,5 @@ library(gtsummary)
 
 ```{r}
 
-
-
 ```
 

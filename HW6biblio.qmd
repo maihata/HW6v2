@@ -1,0 +1,12 @@
+---
+title: "HW6v2_bib"
+format: html
+bibliography: biblio.bib
+link-citations: true 
+editor: visual
+---
+
+## What is Intersectionality?
+
+@crenshaw1987theories emphasized the importance of intersectionality as a research framework, stating that “Because the intersectional experience is greater than the sum of racism and sexism, any analysis that does not take intersectionality into account cannot sufficiently address the particular manner in which Black women are subordinated” (p. 140)." Studies show that this stands true as studies show that infants and toddlers of color are underrepresented in Early Intervention (EI) services [see @cycyk2022moving; @cho2005korean; @cycyk2020supporting).
+
