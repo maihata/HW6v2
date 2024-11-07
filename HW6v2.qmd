@@ -1,15 +1,14 @@
 ---
 title: "HW6"
-format: html
 author: "Maiko Hata and Michelle Cui"
 date: "2024-11-06"
+format: html
 execute:
   eval: true
   echo: false
 fig-width: 6.5
 fig-height: 8
 bibliography: biblio.bib
-
 ---
 
 ```{r}
@@ -57,12 +56,27 @@ star_df %>%
 
 ```
 
-Desicription: As it is presented in the Table 1, both boy and girl in the no free/reduced lunch group has higher average standardized scores than the boy and girls in the free lunch group. In addition, in the free lunch group, the boys average standardized scores is lower than the girls. It seems the both household income and gender influence the students reading and math performance.
+Description: As it is presented in the Table 1, both boy and girl in the no free/reduced lunch group has higher average standardized scores than the boy and girls in the free lunch group. In addition, in the free lunch group, the boys average standardized scores is lower than the girls. It seems the both household income and gender influence the students reading and math performance.
 
+# Plot 1 Relationship between teacher experience and math scores
 ```{r}
+#|warning: False
+#|message: false
+star_df %>% 
+  ggplot(aes(totexp, tmathss, color = frl)) +
+  geom_point(color = "grey") +
+  geom_smooth(formula = y ~ x, method = 'lm')+
+  labs(title = "Relation between teacher experience and math scores",
+       subtitle = "Separate regression lines displayed by free/reduced price lunch status",
+       x = "Teacher Experience (years)",
+       y = "Total Math Scale Score")+
+  theme_minimal() +
+  guides(color = guide_legend(title = "Lunch status",
+                              position = "bottom"))+
+  scale_colour_discrete(breaks = c("yes","no"),
+                        labels = c("Free/Reduced Price Meals", "Paid Meals"))
 
 ```
-
 
 
 \newpage
