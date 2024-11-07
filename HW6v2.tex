@@ -91,6 +91,39 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -175,28 +208,6 @@
 \maketitle
 
 
-\begin{verbatim}
--- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
-v dplyr     1.1.4     v readr     2.1.5
-v forcats   1.0.0     v stringr   1.5.1
-v ggplot2   3.5.1     v tibble    3.2.1
-v lubridate 1.9.3     v tidyr     1.3.1
-v purrr     1.0.2     
--- Conflicts ------------------------------------------ tidyverse_conflicts() --
-x dplyr::filter() masks stats::filter()
-x dplyr::lag()    masks stats::lag()
-i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-here() starts at /Users/michellecui/Library/CloudStorage/OneDrive-UniversityOfOregon/2024 Fall/EDLD 651 Intro to R/HW6v2
-
-
-Attaching package: 'kableExtra'
-
-
-The following object is masked from 'package:dplyr':
-
-    group_rows
-\end{verbatim}
-
 \section{\textless\textless\textless\textless\textless\textless\textless{}
 Updated upstream}\label{updated-upstream}
 
@@ -215,6 +226,74 @@ Stashed changes
 \end{quote}
 \end{quote}
 \end{quote}
+
+\section{What is Intersectionality and why is it
+important?}\label{what-is-intersectionality-and-why-is-it-important}
+
+Crenshaw (1987) emphasized the importance of intersectionality as a
+research framework, stating that ``Because the intersectional experience
+is greater than the sum of racism and sexism, any analysis that does not
+take intersectionality into account cannot sufficiently address the
+particular manner in which Black women are subordinated'' (p.~140).''
+Studies show that this stands true as studies show that infants and
+toddlers of color are underrepresented in Early Intervention (EI)
+services (see Cycyk et al. 2022; Cho and Gannotti 2005; Cycyk and Durán
+2020).
+
+\section{Table 1}\label{table-1}
+
+\section{As it presents in the Table 1, both boy and girl in the no
+free/reduced lunch group has higher average standardized scores than the
+boy and girls in the free lunch group. In addition, in the free lunch
+group, the boys average standardized scores is lower than the girls. It
+seems the both household income and gender influence the students
+reading and math
+performance.}\label{as-it-presents-in-the-table-1-both-boy-and-girl-in-the-no-freereduced-lunch-group-has-higher-average-standardized-scores-than-the-boy-and-girls-in-the-free-lunch-group.-in-addition-in-the-free-lunch-group-the-boys-average-standardized-scores-is-lower-than-the-girls.-it-seems-the-both-household-income-and-gender-influence-the-students-reading-and-math-performance.}
+
+\begin{longtable}[]{@{}llrrrr@{}}
+\toprule\noalign{}
+sex & frl & math\_mean & math\_sd & rdg\_mean & rdg\_sd \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+boy & no & 492.85 & 46.34 & 441.46 & 32.32 \\
+boy & yes & 469.87 & 46.09 & 425.38 & 26.63 \\
+girl & no & 501.21 & 45.96 & 448.54 & 34.52 \\
+girl & yes & 477.51 & 46.30 & 430.80 & 27.42 \\
+\end{longtable}
+
+\newpage
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-cho2005korean}
+Cho, Su-Je, and Mary E Gannotti. 2005. {``Korean-American Mothers'
+Perception of Professional Support in Early Intervention and Special
+Education Programs.''} \emph{Journal of Policy and Practice in
+Intellectual Disabilities} 2 (1): 1--9.
+
+\bibitem[\citeproctext]{ref-crenshaw1987theories}
+Crenshaw, Martha. 1987. {``Theories of Terrorism: Instrumental and
+Organizational Approaches.''} \emph{The Journal of Strategic Studies} 10
+(4): 13--31.
+
+\bibitem[\citeproctext]{ref-cycyk2022moving}
+Cycyk, Lauren M, Stephanie De Anda, Katrina L Ramsey, Bruce S Sheppard,
+and Katharine Zuckerman. 2022. {``Moving Through the Pipeline: Ethnic
+and Linguistic Disparities in Special Education from Birth Through Age
+Five.''} \emph{Educational Researcher} 51 (7): 451--64.
+
+\bibitem[\citeproctext]{ref-cycyk2020supporting}
+Cycyk, Lauren M, and Lillian Durán. 2020. {``Supporting Young Children
+with Disabilities and Their Families from Undocumented Immigrant
+Backgrounds: Recommendations for Program Leaders and Practitioners.''}
+\emph{Young Exceptional Children} 23 (4): 212--24.
+
+\end{CSLReferences}
 
 
 

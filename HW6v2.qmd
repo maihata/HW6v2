@@ -1,6 +1,6 @@
 ---
 title: "HW6"
-format: pdf
+format: html
 author: "Maiko Hata and Michelle Cui"
 date: "2024-11-06"
 execute:
@@ -39,7 +39,8 @@ library(kableExtra)
 
 @crenshaw1987theories emphasized the importance of intersectionality as a research framework, stating that “Because the intersectional experience is greater than the sum of racism and sexism, any analysis that does not take intersectionality into account cannot sufficiently address the particular manner in which Black women are subordinated” (p. 140)." Studies show that this stands true as studies show that infants and toddlers of color are underrepresented in Early Intervention (EI) services [see @cycyk2022moving; @cho2005korean; @cycyk2020supporting].
 
-# 
+
+# Table 1
 ```{r}
 #| results: asis
 #| message: false
@@ -55,6 +56,8 @@ star_df %>%
   kable()
 
 ```
+
+Desicription: As it is presented in the Table 1, both boy and girl in the no free/reduced lunch group has higher average standardized scores than the boy and girls in the free lunch group. In addition, in the free lunch group, the boys average standardized scores is lower than the girls. It seems the both household income and gender influence the students reading and math performance.
 
 ```{r}
 
