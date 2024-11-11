@@ -48,8 +48,6 @@ star_df %>%
 
 ```
 
-Description: As it is presented in the Table 1, both boy and girl in the no free/reduced lunch group has higher average standardized scores than the boy and girls in the free lunch group. In addition, in the free lunch group, the boys average standardized scores is lower than the girls. It seems the both household income and gender influence the students reading and math performance.
-
 Description: As it is presented in the Table 1, both boys and girls in the no free/reduced lunch group has higher average standardized scores than the boys and girls in the free lunch group. In addition, in the free lunch group, the boys' average standardized score is lower than that of the girls'. It seems the both household income and gender influence the students reading and math performance.
 
 ## Plot 1 Relationship between teacher experience and math scores
