@@ -2,7 +2,7 @@
 title: "HW6"
 author: "Maiko Hata and Michelle Cui"
 date: "2024-11-06"
-format: html
+format: pdf
 execute:
   eval: true
   echo: false
@@ -23,16 +23,8 @@ library(DT)
 library(reactable)
 library(gtsummary)
 library(kableExtra)
+library(tinytex)
 ```
-<<<<<<< Updated upstream
-=======
-
-```{r}
-
-
-
-```
->>>>>>> Stashed changes
 
 # What is Intersectionality and why is it important?
 
